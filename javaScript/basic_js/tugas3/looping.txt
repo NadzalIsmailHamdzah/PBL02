@@ -1,0 +1,82 @@
+Nama: Nadzal Ismail Hamdzah
+Absen: 16
+Tugas: Looping (while dan for)
+
+1. Pengertian
+Looping atau perulangan dalam JavaScript adalah suatu mekanisme yang memungkinkan sebuah blok kode dijalankan secara berulang-ulang selama kondisi tertentu masih terpenuhi. Konsep ini digunakan untuk menghindari penulisan instruksi yang sama secara berulang, sehingga kode menjadi lebih ringkas, efisien, dan mudah dikelola.
+Dengan adanya looping, pengembang dapat mengatur seberapa banyak suatu perintah dieksekusi berdasarkan kondisi logis yang ditentukan, baik dalam jumlah yang pasti maupun hingga kondisi berhenti terpenuhi.
+
+2. Jenis-jenis Looping
+    a. for loop
+        for digunakan ketika jumlah perulangan sudah diketahui dengan jelas. Perulangan ini terdiri dari inisialisasi variabel, kondisi, dan increment/decrement.
+    b. while
+        while digunakan ketika jumlah perulangan belum diketahui secara pasti, tetapi bergantung pada kondisi logis tertentu. Perulangan akan terus berjalan selama kondisi bernilai true.
+    c. do...while loop
+        do...while hampir sama dengan while, namun memiliki perbedaan mendasar yaitu blok kode akan dijalankan minimal satu kali meskipun kondisi tidak terpenuhi.
+    d. for...of loop
+        for...of digunakan untuk melakukan perulangan pada elemen-elemen yang dapat diiterasi, seperti array atau string.
+    e. for...in loop
+        for...in digunakan untuk melakukan perulangan terhadap property yang dimiliki oleh sebuah object.
+
+3. Contoh Looping
+    a. for loop
+        for (let i = 1; i <= 5; i++) {
+            console.log("Perulangan ke-" + i);
+        }
+    b. while 
+        let i = 1;
+        while (i <= 5) {
+            console.log("Perulangan ke-" + i);
+            i++;
+        }
+    c. do...while loop
+        let i = 1;
+        do {
+            console.log("Perulangan ke-" + i);
+            i++;
+        } while (i <= 5);
+    d. for...of loop
+        let buah = ["Apel", "Mangga", "Pisang"];
+        for (let item of buah) {
+            console.log(item);
+        }
+    e. for...in loop
+        let siswa = { nama: "Budi", umur: 17, kelas: "XI" };
+        for (let key in siswa) {
+            console.log(key + " : " + siswa[key]);
+        }
+
+4. fungsi dan manfaat dari looping
+    -Menghemat penulisan kode.
+    -Membuat program lebih efisien.
+    -Membantu dalam mengolah data yang jumlahnya banyak (misalnya array, object).
+    -Memudahkan otomatisasi tugas berulang.
+
+5. Kontrol Perulangan (Loop Control Statements)
+    Ada dua keyword penting untuk mengendalikan alur looping:
+    -break > menghentikan perulangan sepenuhnya.
+        for (let i = 1; i <= 5; i++) {
+            if (i === 3) break;
+            console.log(i);
+        }
+        // Output: 1, 2
+    -continue > melewati satu iterasi dan lanjut ke perulangan berikutnya.
+        for (let i = 1; i <= 5; i++) {
+            if (i === 3) continue;
+            console.log(i);
+        }
+        // Output: 1, 2, 4, 5
+
+6. Potensi Masalah dalam Looping
+    Infinite loop (perulangan tak terbatas) hal tersebut terjadi jika kondisi perulangan selalu bernilai true.
+        while (true) {
+            console.log("Ini tidak akan berhenti!");
+        }
+    Solusinya: pastikan ada kondisi berhenti yang jelas.
+
+7. Best Practice / Tips Penggunaan Looping
+    -Gunakan for jika jumlah iterasi sudah diketahui.
+    -Gunakan while jika kondisi berhenti belum pasti.
+    -Gunakan for...of untuk array/string agar lebih rapi.
+    -Gunakan for...in khusus untuk object.
+    -Hindari infinite loop dengan memperhatikan kondisi dan update variabel counter.
