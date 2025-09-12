@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lampu Lalu Lintas</title>
+</head>
+<body>
+    
+
+    <p id="output" style="color: white;"></p>
+
+    <script>
+        let lampu = prompt("Masukan warna lampu lalu lintas: Merah, Kuning, Hijau");
+
+        const output = document.getElementById("output");
+
+        if(lampu == "merah"){
+            document.body.style.backgroundColor = "red";
+            output.innerHTML = "Kendaraan Berhenti";
+        }else if(lampu == "kuning"){
+            document.body.style.backgroundColor = "yellow";
+            output.innerHTML = "Kendaraan Berhati-hati";
+        }else if(lampu == "hijau"){
+            document.body.style.backgroundColor = "green";
+            output.innerHTML = "Kendaraan maju";
+        }else{
+            output.innerHTML = "Input warna lampu tidak valid";
+        }
+
+    </script>
+</body>
+</html>

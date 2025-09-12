@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cek status</title>
+</head>
+<body>
+    <p id="keterangan"></p>
+    <script>
+        //inisialisasi variabel
+        let nama = prompt("Masukan nama anda: ");
+        let kelamin = prompt("Masukan Jenis Kelamin anda: Pria/Wanita").toLowerCase();
+        let status, keterangan;
+
+        if (kelamin == "pria" || kelamin == "wanita"){ // validasi input jenis kelamin
+            let status = prompt("Masukan status anda: Sendiri/Kawin/Cerai").toLowerCase(); // input status
+            
+            // pengecekan status berdasarkan jenis kelamin
+            if( kelamin == "pria"){
+                if(status == "sendiri"){
+                    keterangan = "Perjaka";
+                }else if(status == "kawin"){
+                    keterangan = "Menikah";
+                }else if(status == "cerai"){
+                    keterangan = "Duda";
+                }else{
+                    alert("Input Tidak Valid");
+                    window.location.reload();
+                }
+            }else if(kelamin == "wanita"){
+                if(status == "sendiri"){
+                    keterangan = "Perawan";
+                }else if(status == "kawin"){
+                    keterangan = "Menikah";
+                }else if(status == "cerai"){
+                    keterangan = "Janda";
+                }else{
+                    alert("Input Tidak Valid");
+                    window.location.reload();
+                }
+            }
+
+            //memapilkan hasil
+            document.getElementById("keterangan").innerHTML = "Nama: " + nama + "<br>" + "Jenis Kelamin: " + kelamin + "<br>" + "Status: " + status + "<br>" + "Keterangan: " + keterangan;
+        }else{
+            alert("Input Tidak Valid");
+            window.location.reload();
+        }
+    
+    </script>
+</body>
+</html>
