@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4</title>
+</head>
+
+<body>
+    <div>
+        <h1>Data Diri</h1>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <th>Nama</th>
+                <th>NIP</th>
+                <th>Tanggal Lahir</th>
+                <th>Tanggal ASN</th>
+                <th>Kelamin</th>
+                <th>No. Urut</th>
+            </tr>
+            <tr>
+                <td id="nama"></td>
+                <td id="nip"></td>
+                <td id="tgl_lahir"></td>
+                <td id="tgl_asn"></td>
+                <td id="kelamin"></td>
+                <td id="no_urut"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        const nama = prompt("Masukkan nama anda: ");
+        const nip = prompt("Masukkan NIP anda: ");
+        let tgl_lahir, tgl_asn, kelamin, no_urut;
+        
+        document.getElementById("nama").innerHTML = nama;
+        document.getElementById("nip").innerHTML = nip;
+
+        tgl_lahir = nip.slice(0, 8);
+
+        let tahun = tgl_lahir.slice(0, 4);
+        let bulan = tgl_lahir.slice(4, 6) - 1; // bulan JS dimulai dari 0
+        let hari = tgl_lahir.slice(6, 8);
+        let tanggal = new Date(tahun, bulan, hari);
+
+        // daftar nama hari dan bulan
+        let hariList = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+        let bulanList = [
+        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+        ];
+
+        // format output
+        let tgl_lahir_formatted = `${hariList[tanggal.getDay()]}, ${hari} ${bulanList[bulan]} ${tahun}`;
+
+        document.getElementById("tgl_lahir").innerHTML = tgl_lahir_formatted;
+
+        tgl_asn = nip.slice(8, 14); 
+        document.getElementById("tgl_asn").innerHTML = tgl_asn;
+
+        kelamin = nip.charAt(14);
+        let jenis_kelamin;
+        if(kelamin == 1){
+            jenis_kelamin = "Pria";
+        } else {
+            jenis_kelamin = "Wanita";
+        }
+        document.getElementById("kelamin").innerHTML = jenis_kelamin;
+
+        no_urut = nip.slice(-3);
+        document.getElementById("no_urut").innerHTML = no_urut;  
+    </script>
+</body>
+</html>
